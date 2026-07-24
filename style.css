@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* Navigation Header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e24;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #333;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    background: transparent;
+    color: #a4b0be;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    color: #fff;
+    background-color: #2f3542;
+}
+
+.nav-btn.active {
+    background-color: #ff4757;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Page Layout */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: #f1f2f6;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Link Wrapper Fix - Removes Blue/Purple Underlines */
+.card-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;
+}
+
+/* Clean Card Styling */
+.card {
+    background-color: #1e1e24;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #2f3542;
+    transition: all 0.2s ease;
+}
+
+.card h3 {
+    color: #ffffff !important;
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin: 12px 0 8px 0;
+    text-decoration: none !important;
+}
+
+.card p {
+    color: #a4b0be;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Tag Labels */
+.tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #2f3542;
+    color: #2ed573;
+    font-weight: bold;
+}
+
+.tag.youtube { color: #ff4757; }
+.tag.bilibili { color: #00a1d6; }
+
+/* Clickable Hover Effect */
+.card-link:hover .card {
+    border-color: #ff4757;
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+/* Language Filter Bar Styling */
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+    background-color: #1e1e24;
+    color: #a4b0be;
+    border: 1px solid #2f3542;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    color: #ffffff;
+    background-color: #2f3542;
+}
+
+.filter-btn.active {
+    background-color: #2f3542;
+    color: #2ed573;
+    border-color: #2ed573;
+    font-weight: bold;
+}
+
+/* Video Cover Thumbnail Styling */
+.thumbnail-container {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    background-color: #121212;
+}
+
+.thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Zoom cover image slightly on hover */
+.card-link:hover .thumbnail-img {
+    transform: scale(1.05);
+}
+
+/* Section Divider */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #2f3542;
+    margin: 3rem 0;
+}
+
+/* Sales Section & Subtitle */
+.sales-section {
+    margin-top: 1rem;
+}
+
+.section-subtitle {
+    color: #a4b0be;
+    font-size: 0.9rem;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Sales Chart Table Structure */
+.chart-container {
+    background-color: #1e1e24;
+    border: 1px solid #2f3542;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.chart-header {
+    display: grid;
+    grid-template-columns: 220px 1fr 100px;
+    gap: 15px;
+    font-weight: bold;
+    color: #2ed573;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #2f3542;
+    margin-bottom: 12px;
+}
+
+.chart-row {
+    display: grid;
+    grid-template-columns: 220px 1fr 100px;
+    gap: 15px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chart-row:last-child {
+    border-bottom: none;
+}
+
+.model-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #ffffff;
+}
+
+/* Horizontal Bar Graphics */
+.bar-wrapper {
+    background-color: #121212;
+    border-radius: 12px;
+    height: 14px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4757, #ff6b81);
+    border-radius: 12px;
+    transition: width 1s ease-in-out;
+}
+
+.sales-count {
+    font-size: 0.9rem;
+    color: #a4b0be;
+    text-align: right;
+    font-weight: 500;
+}
+
+/* Mobile Responsiveness for Chart */
+@media (max-width: 600px) {
+    .chart-header, .chart-row {
+        grid-template-columns: 140px 1fr 80px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ==========================================
+   MOBILE & RESPONSIVE DESIGN FIXES
+   ========================================== */
+
+/* 1. Prevent image and video overflow */
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* 2. Responsive adjustment for tablets & mobile phones */
+@media (max-width: 768px) {
+  /* Navbar adjustments */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .nav-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    flex: 1 1 calc(50% - 12px); /* Displays tabs in a neat 2x2 grid */
+    text-align: center;
+  }
+
+  /* Filter bar adjustments for Tutorials & News */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  /* Main container & Grid layout */
+  .container {
+    padding: 0 12px;
+    margin: 1.2rem auto;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Single vertical column on mobile */
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+}

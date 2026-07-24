@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Newbee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">🎸 Guitar Newbee</div>
+        <nav class="nav-links">
+            <button class="nav-btn active" onclick="switchTab(event, 'news')">Recent News</button>
+            <button class="nav-btn" onclick="switchTab(event, 'tutorials')">Tutorials</button>
+            <button class="nav-btn" onclick="switchTab(event, 'guitars')">Guitars</button>
+            <button class="nav-btn" onclick="switchTab(event, 'about')">About Us</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="news" class="tab-content active">
+            <h2>🔥 Recent Guitar News & Guides</h2>
+            
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterLanguage('all', event)">🌐 All (混合)</button>
+                <button class="filter-btn" onclick="filterLanguage('en', event)">🇬🇧 English</button>
+                <button class="filter-btn" onclick="filterLanguage('zh', event)">🇨🇳 中文</button>
+            </div>
+
+            <div id="news-grid" class="grid"></div>
+        </section>
+                
+        <section id="tutorials" class="tab-content">
+            <h2>📺 Beginner Tutorials</h2>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterPlatform('all', event)">🌐 All Platforms</button>
+                <button class="filter-btn" onclick="filterPlatform('youtube', event)">🔴 YouTube</button>
+                <button class="filter-btn" onclick="filterPlatform('bilibili', event)">🔵 Bilibili</button>
+            </div>
+
+            <div id="tutorials-grid" class="grid"></div>
+        </section>
+
+<section id="guitars" class="tab-content">
+            <h2>🎸 Guitar Reviews & Sound Tests</h2>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterGuitarPlatform('all', event)">🌐 All Reviews</button>
+                <button class="filter-btn" onclick="filterGuitarPlatform('youtube', event)">🔴 YouTube</button>
+                <button class="filter-btn" onclick="filterGuitarPlatform('bilibili', event)">🔵 Bilibili</button>
+            </div>
+
+            <div id="guitars-grid" class="grid"></div>
+
+            <hr class="section-divider">
+
+            <div class="sales-section">
+                <h2>📊 Most Popular Beginner Guitars</h2>
+                <p class="section-subtitle">Based on annual global sales & beginner recommendations</p>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span>Guitar Model</span>
+                        <span>Popularity & Sales Volume</span>
+                        <span>Units Sold</span>
+                    </div>
+
+                    <div class="chart-row">
+                        <div class="model-name">Squier Affinity Stratocaster</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 95%;"></div>
+                        </div>
+                        <div class="sales-count">125,000+</div>
+                    </div>
+
+                    <div class="chart-row">
+                        <div class="model-name">Yamaha Pacifica 112V</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 85%;"></div>
+                        </div>
+                        <div class="sales-count">102,000+</div>
+                    </div>
+
+                    <div class="chart-row">
+                        <div class="model-name">Ibanez AZES40</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 72%;"></div>
+                        </div>
+                        <div class="sales-count">88,000+</div>
+                    </div>
+
+                    <div class="chart-row">
+                        <div class="model-name">Epiphone Les Paul Studio</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 65%;"></div>
+                        </div>
+                        <div class="sales-count">76,000+</div>
+                    </div>
+
+                    <div class="chart-row">
+                        <div class="model-name">PRS SE Standard 24</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 50%;"></div>
+                        </div>
+                        <div class="sales-count">58,000+</div>
+                    </div>
+
+                    <div class="chart-row">
+                        <div class="model-name">Jackson JS22 Dinky</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 42%;"></div>
+                        </div>
+                        <div class="sales-count">49,000+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="tab-content">
+            <h2>ℹ️ About Us</h2>
+            <div class="card">
+                <p>Guitar Newbee is a lightweight testbed designed to bring together tutorials, gear guides, and news for beginner electric guitar players.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
